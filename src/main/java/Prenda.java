@@ -1,5 +1,6 @@
 public class Prenda {
 
+
     enum Material {
         ALGODON,
         JEAN,
@@ -19,6 +20,7 @@ public class Prenda {
     private Material material;
     private Color color;
     private Color colorSecundario;
+    private Integer temperaturaMaxima;
 
     public Prenda(Tipo tipo, Material material, Color color) {
         if(tipo == null || material == null || color == null)
@@ -52,5 +54,13 @@ public class Prenda {
 
     public Color getColorSecundario() {
         return colorSecundario;
+    }
+
+    public Integer getTemperaturaMaxima() {
+        return temperaturaMaxima;
+    }
+
+    public void setTemperaturaMaxima(Integer temperaturaMaxima) {
+        this.temperaturaMaxima = temperaturaMaxima;
     }
 }
