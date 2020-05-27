@@ -63,4 +63,8 @@ public class Prenda {
     public void setTemperaturaMaxima(Integer temperaturaMaxima) {
         this.temperaturaMaxima = temperaturaMaxima;
     }
+
+    public Boolean aptaParaTemperatura(int temperatura){
+        return temperatura <= temperaturaMaxima;
+    }
 }
