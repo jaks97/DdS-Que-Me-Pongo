@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
-    Ciudad ciudad;
-    List<Prenda> guardarropas;
+    private Ciudad ciudad;
+    private List<Guardarropas> guardarropas;
 
     private List<Atuendo> generarSugerenciaSegunClima() {
-        Clima clima = ciudad.getClimaActual();
+        Clima clima = getCiudad().getClimaActual();
 
-        List<Prenda> prendasAptas = guardarropas.stream().filter((Prenda prenda) -> prenda.aptaParaTemperatura(clima.getTemperatura()));
+        List<Prenda> prendasAptas = getGuardarropas().stream().filter((Prenda prenda) -> prenda.aptaParaTemperatura(clima.getTemperatura()));
 
         List<Atuendo> sugerencias = new ArrayList<>();
 
@@ -17,5 +17,21 @@ public class Usuario {
          */
 
         return sugerencias;
+    }
+
+    public void setGuardarropas(List<Guardarropas> guardarropas) {
+        this.guardarropas = guardarropas;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public List<Guardarropas> getGuardarropas() {
+        return guardarropas;
     }
 }
